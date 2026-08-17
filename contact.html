@@ -1,320 +1,402 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js" >
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Risheen — Contact</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --bg: #0D1017;
-    --bg-raised: #131722;
-    --line: #232838;
-    --text: #E7E9EE;
-    --text-dim: #7A8194;
-    --accent: #4F5EFF;
-    --accent-soft: rgba(79,94,255,0.12);
-    --flag: #FFD23F;
-    --radius: 4px;
-  }
 
-  * { box-sizing: border-box; margin: 0; padding: 0; }
+    <!--- basic page needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Risheen</title>
 
-  html { -webkit-font-smoothing: antialiased; }
+    <script>
+        document.documentElement.classList.remove('no-js');
+        document.documentElement.classList.add('js');
+    </script>
 
-  body{
-    background: var(--bg);
-    color: var(--text);
-    font-family: 'Inter', sans-serif;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 32px 20px;
-    line-height: 1.5;
-  }
+    <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" href="css/vendor.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-  @media (prefers-reduced-motion: reduce){
-    * { animation: none !important; transition: none !important; }
-  }
+    <!-- favicons
+    ================================================== -->
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
 
-  .wrap{
-    width: 100%;
-    max-width: 640px;
-  }
+    <!-- contact page styles
+    ================================================== -->
+    <style>
+      :root{
+        --bg: #0D1017;
+        --bg-raised: #131722;
+        --line: #232838;
+        --text: #E7E9EE;
+        --text-dim: #7A8194;
+        --accent: #4F5EFF;
+        --accent-soft: rgba(79,94,255,0.12);
+        --flag: #FFD23F;
+        --radius: 4px;
+      }
 
-  /* ---- header ---- */
-  .eyebrow{
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 12.5px;
-    color: var(--accent);
-    letter-spacing: 0.08em;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 18px;
-  }
+      .s-content-contact *{ box-sizing: border-box; }
 
-  .eyebrow .dot{
-    width: 7px; height: 7px;
-    background: var(--flag);
-    border-radius: 50%;
-    animation: pulse 2.2s ease-in-out infinite;
-  }
+      .s-content-contact{
+        background: var(--bg);
+        color: var(--text);
+        font-family: 'Inter', sans-serif;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 100px 20px 60px;
+        line-height: 1.5;
+      }
 
-  @keyframes pulse{
-    0%, 100% { opacity: 1; transform: scale(1); }
-    50% { opacity: 0.4; transform: scale(0.8); }
-  }
+      @media (prefers-reduced-motion: reduce){
+        .s-content-contact * { animation: none !important; transition: none !important; }
+      }
 
-  h1{
-    font-family: 'Space Grotesk', sans-serif;
-    font-weight: 700;
-    font-size: clamp(34px, 7vw, 52px);
-    line-height: 1.05;
-    letter-spacing: -0.02em;
-    margin-bottom: 14px;
-  }
+      .wrap{
+        width: 100%;
+        max-width: 640px;
+      }
 
-  h1 span{ color: var(--text-dim); font-weight: 500; }
+      .eyebrow{
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 12.5px;
+        color: var(--accent);
+        letter-spacing: 0.08em;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 18px;
+      }
 
-  .lede{
-    color: var(--text-dim);
-    font-size: 16px;
-    max-width: 46ch;
-    margin-bottom: 40px;
-  }
+      .eyebrow .dot{
+        width: 7px; height: 7px;
+        background: var(--flag);
+        border-radius: 50%;
+        animation: pulse 2.2s ease-in-out infinite;
+      }
 
-  /* ---- terminal panel ---- */
-  .panel{
-    background: var(--bg-raised);
-    border: 1px solid var(--line);
-    border-radius: 8px;
-    overflow: hidden;
-  }
+      @keyframes pulse{
+        0%, 100% { opacity: 1; transform: scale(1); }
+        50% { opacity: 0.4; transform: scale(0.8); }
+      }
 
-  .panel-head{
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 13px 16px;
-    border-bottom: 1px solid var(--line);
-  }
+      .s-content-contact h1{
+        font-family: 'Space Grotesk', sans-serif;
+        font-weight: 700;
+        font-size: clamp(34px, 7vw, 52px);
+        line-height: 1.05;
+        letter-spacing: -0.02em;
+        margin-bottom: 14px;
+        color: var(--text);
+      }
 
-  .panel-head .chip{
-    width: 9px; height: 9px;
-    border-radius: 50%;
-    background: var(--line);
-  }
+      .s-content-contact h1 span{ color: var(--text-dim); font-weight: 500; }
 
-  .panel-head .filename{
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 12px;
-    color: var(--text-dim);
-    margin-left: 6px;
-  }
+      .lede{
+        color: var(--text-dim);
+        font-size: 16px;
+        max-width: 46ch;
+        margin-bottom: 40px;
+      }
 
-  .rows{ padding: 6px; }
+      .panel{
+        background: var(--bg-raised);
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        overflow: hidden;
+      }
 
-  .row{
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    padding: 16px 14px;
-    text-decoration: none;
-    color: var(--text);
-    border-radius: var(--radius);
-    transition: background 0.15s ease, padding-left 0.15s ease;
-    position: relative;
-  }
+      .panel-head{
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 13px 16px;
+        border-bottom: 1px solid var(--line);
+      }
 
-  .row + .row{ border-top: 1px solid var(--line); }
+      .panel-head .chip{
+        width: 9px; height: 9px;
+        border-radius: 50%;
+        background: var(--line);
+      }
 
-  .row:hover, .row:focus-visible{
-    background: var(--accent-soft);
-    padding-left: 20px;
-    outline: none;
-  }
+      .panel-head .filename{
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 12px;
+        color: var(--text-dim);
+        margin-left: 6px;
+      }
 
-  .row:focus-visible{ box-shadow: inset 2px 0 0 var(--accent); }
+      .rows{ padding: 6px; }
 
-  .icon{
-    width: 36px; height: 36px;
-    flex-shrink: 0;
-    border-radius: 7px;
-    background: var(--bg);
-    border: 1px solid var(--line);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--text-dim);
-    transition: color 0.15s ease, border-color 0.15s ease;
-  }
+      .row{
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        padding: 16px 14px;
+        text-decoration: none;
+        color: var(--text);
+        border-radius: var(--radius);
+        transition: background 0.15s ease, padding-left 0.15s ease;
+        position: relative;
+      }
 
-  .row:hover .icon, .row:focus-visible .icon{
-    color: var(--accent);
-    border-color: var(--accent);
-  }
+      .row + .row{ border-top: 1px solid var(--line); }
 
-  .icon svg{ width: 17px; height: 17px; }
+      .row:hover, .row:focus-visible{
+        background: var(--accent-soft);
+        padding-left: 20px;
+        outline: none;
+      }
 
-  .row-text{ flex: 1; min-width: 0; }
+      .row:focus-visible{ box-shadow: inset 2px 0 0 var(--accent); }
 
-  .key{
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    color: var(--text-dim);
-    letter-spacing: 0.04em;
-    display: block;
-    margin-bottom: 3px;
-  }
+      .icon{
+        width: 36px; height: 36px;
+        flex-shrink: 0;
+        border-radius: 7px;
+        background: var(--bg);
+        border: 1px solid var(--line);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--text-dim);
+        transition: color 0.15s ease, border-color 0.15s ease;
+      }
 
-  .val{
-    font-size: 15px;
-    font-weight: 500;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
+      .row:hover .icon, .row:focus-visible .icon{
+        color: var(--accent);
+        border-color: var(--accent);
+      }
 
-  .arrow{
-    color: var(--text-dim);
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 15px;
-    flex-shrink: 0;
-    transform: translateX(-4px);
-    opacity: 0;
-    transition: transform 0.15s ease, opacity 0.15s ease;
-  }
+      .icon svg{ width: 17px; height: 17px; }
 
-  .row:hover .arrow, .row:focus-visible .arrow{
-    transform: translateX(0);
-    opacity: 1;
-    color: var(--accent);
-  }
+      .row-text{ flex: 1; min-width: 0; }
 
-  /* ---- footer ---- */
-  .cursor-line{
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 13px;
-    color: var(--text-dim);
-    padding: 16px 20px 4px;
-  }
+      .key{
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 11px;
+        color: var(--text-dim);
+        letter-spacing: 0.04em;
+        display: block;
+        margin-bottom: 3px;
+      }
 
-  .cursor{
-    display: inline-block;
-    width: 7px; height: 14px;
-    background: var(--flag);
-    margin-left: 2px;
-    vertical-align: -2px;
-    animation: blink 1s step-end infinite;
-  }
+      .val{
+        font-size: 15px;
+        font-weight: 500;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
 
-  @keyframes blink{ 50% { opacity: 0; } }
+      .arrow{
+        color: var(--text-dim);
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 15px;
+        flex-shrink: 0;
+        transform: translateX(-4px);
+        opacity: 0;
+        transition: transform 0.15s ease, opacity 0.15s ease;
+      }
 
-  footer{
-    margin-top: 28px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11.5px;
-    color: var(--text-dim);
-  }
+      .row:hover .arrow, .row:focus-visible .arrow{
+        transform: translateX(0);
+        opacity: 1;
+        color: var(--accent);
+      }
 
-  footer .name{ color: var(--text); }
+      .cursor-line{
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 13px;
+        color: var(--text-dim);
+        padding: 16px 20px 4px;
+      }
 
-  @media (max-width: 480px){
-    .val{ font-size: 14px; }
-    footer{ flex-direction: column; gap: 6px; align-items: flex-start; }
-  }
-</style>
+      .cursor{
+        display: inline-block;
+        width: 7px; height: 14px;
+        background: var(--flag);
+        margin-left: 2px;
+        vertical-align: -2px;
+        animation: blink 1s step-end infinite;
+      }
+
+      @keyframes blink{ 50% { opacity: 0; } }
+
+      .contact-footer{
+        margin-top: 28px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 11.5px;
+        color: var(--text-dim);
+      }
+
+      .contact-footer .name{ color: var(--text); }
+
+      @media (max-width: 480px){
+        .val{ font-size: 14px; }
+        .contact-footer{ flex-direction: column; gap: 6px; align-items: flex-start; }
+      }
+    </style>
+
 </head>
-<body>
 
-<div class="wrap">
 
-  <div class="eyebrow"><span class="dot"></span>AVAILABLE FOR NEW PROJECTS</div>
+<body id="top">
 
-  <h1>Let's build<br><span>something original.</span></h1>
 
-  <div class="panel">
-    <div class="panel-head">
-      <span class="chip"></span><span class="chip"></span><span class="chip"></span>
-      <span class="filename">contact.sh</span>
+    <!-- preloader
+    ================================================== -->
+    <div id="preloader">
+        <div id="loader" class="dots-fade">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
     </div>
 
-    <div class="rows">
 
-      <a class="row" href="https://wa.me/918086797099" target="_blank" rel="noopener">
-        <span class="icon">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.1.2-.3.3-.4.1-.2 0-.4 0-.5C10 9 9.4 7.6 9.1 7c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3 4.8 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.7-.7 2-1.4.2-.6.2-1.2.1-1.3-.1-.1-.2-.2-.5-.3z"/><path d="M12 2C6.5 2 2 6.5 2 12c0 1.9.5 3.7 1.5 5.3L2 22l4.9-1.3C8.4 21.6 10.1 22 12 22c5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18.2c-1.7 0-3.3-.5-4.7-1.3l-.3-.2-3.1.8.8-3-.2-.3C3.7 14.7 3.2 13.4 3.2 12c0-4.8 3.9-8.7 8.7-8.7s8.7 3.9 8.7 8.7-3.8 8.9-8.6 8.9z"/></svg>
-        </span>
-        <span class="row-text">
-          <span class="key">whatsapp</span>
-          <span class="val">+91 80867 97099</span>
-        </span>
-        <span class="arrow">→</span>
-      </a>
+    <!-- page wrap
+    ================================================== -->
+    <div id="page" class="s-pagewrap">
 
-      <a class="row" href="tel:+918086797099">
-        <span class="icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        </span>
-        <span class="row-text">
-          <span class="key">phone</span>
-          <span class="val">+91 80867 97099</span>
-        </span>
-        <span class="arrow">→</span>
-      </a>
 
-      <a class="row" href="mailto:risheendilshad@gmail.com">
-        <span class="icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z" opacity="0"/><path d="M22 6l-10 7L2 6"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg>
-        </span>
-        <span class="row-text">
-          <span class="key">email</span>
-          <span class="val">risheendilshad@gmail.com</span>
-        </span>
-        <span class="arrow">→</span>
-      </a>
+        <!-- # site header
+        ================================================== -->
+        <header class="s-header">
+            <div class="row s-header__inner">
 
-      <a class="row" href="https://instagram.com/risheen_dilshad" target="_blank" rel="noopener">
-        <span class="icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
-        </span>
-        <span class="row-text">
-          <span class="key">instagram</span>
-          <span class="val">@risheen_dilshad</span>
-        </span>
-        <span class="arrow">→</span>
-      </a>
+                <div class="s-header__block">
+                    <div class="s-header__logo">
+                        <a class="logo" href="#">
+                            <img src="images/logo.png" width="50px;" height="20px;" alt="">
+                        </a>
+                    </div>
 
-      <a class="row" href="https://www.linkedin.com/in/risheen-ea-758720207" target="_blank" rel="noopener">
-        <span class="icon">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 2h-17A1.5 1.5 0 0 0 2 3.5v17A1.5 1.5 0 0 0 3.5 22h17a1.5 1.5 0 0 0 1.5-1.5v-17A1.5 1.5 0 0 0 20.5 2zM8 19H5v-9h3zM6.5 8.7A1.7 1.7 0 1 1 6.5 5.3a1.7 1.7 0 0 1 0 3.4zM19 19h-3v-4.7c0-1.1 0-2.6-1.6-2.6s-1.8 1.2-1.8 2.5V19h-3v-9h2.9v1.3h.04c.4-.8 1.4-1.6 2.9-1.6 3.1 0 3.6 2 3.6 4.7z"/></svg>
-        </span>
-        <span class="row-text">
-          <span class="key">linkedin</span>
-          <span class="val">/in/risheen-ea-758720207</span>
-        </span>
-        <span class="arrow">→</span>
-      </a>
+                    <a class="s-header__menu-toggle" href="#0"><span>Menu</span></a>
+                </div> <!-- end s-header__block -->
 
-    </div>
+                <nav class="s-header__nav">
+                    <ul class="s-header__menu-links">
+                        <li><a class="smoothscroll" href="index.html#intro">Intro</a></li>
+                        <li><a class="smoothscroll" href="about.html">About</a></li>
+                        <li><a class="smoothscroll" href="index.html#works">Works</a></li>
+                        <li class="current"><a class="smoothscroll" href="contact.html">Contact</a></li>
+                    </ul> <!-- s-header__menu-links -->
+                </nav> <!-- end s-header__nav -->
 
-    <div class="cursor-line">tell me about your project<span class="cursor"></span></div>
-  </div>
+            </div> <!-- end s-header__inner -->
+        </header> <!-- end s-header -->
 
-  <footer>
-    <span><span class="name">Risheen</span> — Front End Developer &amp; Freelance Web Designer</span>
-    <span>Kochi, Kerala</span>
-  </footer>
 
-</div>
+        <!-- # contact content
+        ================================================== -->
+        <section id="content" class="s-content-contact">
+
+            <div class="wrap">
+
+                <div class="eyebrow"><span class="dot"></span>AVAILABLE FOR NEW PROJECTS</div>
+
+                <h1>Let's build<br><span>something original.</span></h1>
+                <p class="lede">No templates, no stock layouts — just tell me what you're building and I'll take it from there. Reach out on whichever line works for you.</p>
+
+                <div class="panel">
+                    <div class="panel-head">
+                        <span class="chip"></span><span class="chip"></span><span class="chip"></span>
+                        <span class="filename">contact.sh</span>
+                    </div>
+
+                    <div class="rows">
+
+                        <a class="row" href="https://wa.me/918086797099" target="_blank" rel="noopener">
+                            <span class="icon">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.1.2-.3.3-.4.1-.2 0-.4 0-.5C10 9 9.4 7.6 9.1 7c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3 4.8 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.7-.7 2-1.4.2-.6.2-1.2.1-1.3-.1-.1-.2-.2-.5-.3z"/><path d="M12 2C6.5 2 2 6.5 2 12c0 1.9.5 3.7 1.5 5.3L2 22l4.9-1.3C8.4 21.6 10.1 22 12 22c5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18.2c-1.7 0-3.3-.5-4.7-1.3l-.3-.2-3.1.8.8-3-.2-.3C3.7 14.7 3.2 13.4 3.2 12c0-4.8 3.9-8.7 8.7-8.7s8.7 3.9 8.7 8.7-3.8 8.9-8.6 8.9z"/></svg>
+                            </span>
+                            <span class="row-text">
+                                <span class="key">whatsapp</span>
+                                <span class="val">+91 80867 97099</span>
+                            </span>
+                            <span class="arrow">→</span>
+                        </a>
+
+                        <a class="row" href="tel:+918086797099">
+                            <span class="icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                            </span>
+                            <span class="row-text">
+                                <span class="key">phone</span>
+                                <span class="val">+91 80867 97099</span>
+                            </span>
+                            <span class="arrow">→</span>
+                        </a>
+
+                        <a class="row" href="mailto:risheendilshad@gmail.com">
+                            <span class="icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 6l-10 7L2 6"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg>
+                            </span>
+                            <span class="row-text">
+                                <span class="key">email</span>
+                                <span class="val">risheendilshad@gmail.com</span>
+                            </span>
+                            <span class="arrow">→</span>
+                        </a>
+
+                        <a class="row" href="https://instagram.com/risheen_dilshad" target="_blank" rel="noopener">
+                            <span class="icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+                            </span>
+                            <span class="row-text">
+                                <span class="key">instagram</span>
+                                <span class="val">@risheen_dilshad</span>
+                            </span>
+                            <span class="arrow">→</span>
+                        </a>
+
+                        <a class="row" href="https://www.linkedin.com/in/risheen-ea-758720207" target="_blank" rel="noopener">
+                            <span class="icon">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 2h-17A1.5 1.5 0 0 0 2 3.5v17A1.5 1.5 0 0 0 3.5 22h17a1.5 1.5 0 0 0 1.5-1.5v-17A1.5 1.5 0 0 0 20.5 2zM8 19H5v-9h3zM6.5 8.7A1.7 1.7 0 1 1 6.5 5.3a1.7 1.7 0 0 1 0 3.4zM19 19h-3v-4.7c0-1.1 0-2.6-1.6-2.6s-1.8 1.2-1.8 2.5V19h-3v-9h2.9v1.3h.04c.4-.8 1.4-1.6 2.9-1.6 3.1 0 3.6 2 3.6 4.7z"/></svg>
+                            </span>
+                            <span class="row-text">
+                                <span class="key">linkedin</span>
+                                <span class="val">/in/risheen-ea-758720207</span>
+                            </span>
+                            <span class="arrow">→</span>
+                        </a>
+
+                    </div>
+
+                    <div class="cursor-line">tell me about your project<span class="cursor"></span></div>
+                </div>
+
+                <div class="contact-footer">
+                    <span><span class="name">Risheen</span> — Front End Developer &amp; Freelance Web Designer</span>
+                    <span>Kochi, Kerala</span>
+                </div>
+
+            </div>
+
+        </section> <!-- end contact content -->
+
+
+    </div> <!-- end s-pagewrap -->
+
+
+    <!-- Java Script
+    ================================================== -->
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
 
 </body>
 </html>
