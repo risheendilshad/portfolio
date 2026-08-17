@@ -3952,7 +3952,70 @@ td:last-child {
     --width-grid-max: 1400px;
     margin-top      : var(--vspace-0_5);
 }
+/* ---- selected-works grid (thumbnail + title-below style) ---- */
+.s-works .row .column.entry {
+    display       : flex;
+    flex-direction: column;
+    width         : 20%;      /* 5 across, matches your screenshot */
+    margin-bottom : var(--vspace-1_5);
+}
 
+.s-works .entry__link {
+    display       : flex;
+    flex-direction: column;
+    height        : 100%;
+}
+
+.s-works .entry__thumb {
+    position     : relative;
+    width        : 100%;
+    aspect-ratio : 3 / 4;
+    overflow     : hidden;
+    border-radius: 8px;
+    margin-bottom: var(--vspace-0_75);
+    background   : var(--color-gray-8);
+}
+
+.s-works .entry__thumb img {
+    width         : 100%;
+    height        : 100%;
+    -o-object-fit : cover;
+    object-fit    : cover;
+    object-position: top;
+    display       : block;
+    transition    : transform 0.3s ease-in-out;
+}
+
+.s-works .entry__link:hover .entry__thumb img {
+    transform: scale(1.03);
+}
+
+.s-works .entry__info {
+    margin-top: auto;
+}
+
+.s-works .entry__title {
+    color: var(--color-text-dark);   /* theme's default entry__title is white, meant for dark overlay */
+}
+
+/* responsive: match your existing folio-entries breakpoints */
+@media screen and (max-width: 1000px) {
+    .s-works .row .column.entry {
+        width: 33.3333%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .s-works .row .column.entry {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .s-works .row .column.entry {
+        width: 100%;
+    }
+}
 /* ------------------------------------------------------------------- 
  * ## folio entries 
  * ------------------------------------------------------------------- */
