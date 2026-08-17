@@ -3067,7 +3067,7 @@ td:last-child {
 .s-header.sticky {
     opacity         : 0;
     visibility      : hidden;
-    background-color:hsl(0deg 0% 0%);;
+    background-color:hsl(0deg 0% 0%);
     box-shadow      : var(--box-shadow);
     border          : none;
     border-bottom   : 1px solid rgba(255, 255, 255, 0.03);
